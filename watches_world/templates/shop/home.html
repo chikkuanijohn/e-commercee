@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" href="{%static 'user_home.css' %}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .menu ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .menu ul li a:hover {
+            color: #007BFF;
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .search {
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .icon {
+            font-size: 20px;
+            color: #000;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            background: red;
+            color: #fff;
+            font-size: 12px;
+            width: 16px;
+            height: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="{%static 'images/Luxury Modern Swiss Watch Clock Logo.png' %}" alt="Just Watches" />
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="add_product">Addproduct</a></li>
+                <li><a href="view_bookings">view_bookings</a></li>
+                <li><a href="cart">cart</a></li>
+                <li><a href="add_cate">add_category</a></li>
+
+                <!-- <li><a href="Category">Category</a></li> 
+                <li><a href="contact">contact</a></li> -->
+                <!-- <li><a href="sale">Sale</a></li>  -->
+                <li><a href="logout">logout</a></li>
+            </ul>
+        </nav>
+        <div class="actions">
+            <input type="text" placeholder="Search" class="search">
+            <a href="#profile" class="icon">👤</a>
+            <a href="#cart" class="icon">🛒<span class="cart-count">0</span></a>
+        </div>
+    </header>
+
+<!-- carousal -->
+<!-- <div id="demo" class="carousel slide" data-bs-ride="carousel"> -->
+
+  <!-- Indicators/dots -->
+  <!-- <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div> -->
+  
+  <!-- The slideshow/carousel -->
+  <!-- <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{%static 'images/Screenshot 2024-12-07 at 19-03-14 Buy Luxury and Fashion Watches Online at JUST WATCHES By Timex Group.png' %}" alt="Los Angeles" class="d-block" style="width:100%">
+    </div>
+    <div class="carousel-item">
+      <img src="{%static 'images/Screenshot 2024-12-07 at 19-25-58 Buy Luxury and Fashion Watches Online at JUST WATCHES By Timex Group.png' %}" alt="Chicago" class="d-block" style="width:100%">
+    </div>
+    <div class="carousel-item">
+      <img src="{%static 'images/Screenshot 2024-12-07 at 19-29-19 Buy Luxury and Fashion Watches Online at JUST WATCHES By Timex Group.png '%}" alt="New York" class="d-block" style="width:100%">
+    </div>
+  </div>
+   -->
+  <!-- Left and right controls/icons -->
+  <!-- <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div> -->
+
+<!-- <div class="container-fluid mt-3"> -->
+  <!-- <h3>Carousel Example</h3>
+  <p>The following example shows how to create a basic carousel with indicators and controls.</p> -->
+<!-- </div> -->
+
+<!-- section1 -->
+<!-- <style> -->
+    <!-- /* CSS for the feature section */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+    } -->
+
+    <!-- .feature-section {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #000; /* Black background */
+        color: #fff;
+        padding: 20px 10px;
+    } -->
+
+    <!-- .feature-item {
+        text-align: center;
+        flex: 1;
+        max-width: 150px;
+        padding: 10px;
+    }
+
+    .feature-item img {
+        width: 50px; /* Set the size of the icons/images */
+        height: 50px;
+        margin-bottom: 10px;
+        display: block;
+    } -->
+
+    <!-- .feature-item p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .feature-section {
+            flex-wrap: wrap;
+        }
+        .feature-item {
+            flex: 1 1 50%;
+            max-width: 100%;
+        }
+    }
+</style>
+</head> -->
+<!-- <body>
+<div class="feature-section">
+    <div class="feature-item">
+        <img src="{%static 'images/img1.jpg' %}" alt="No Cost EMI">
+        <p>No Cost EMI above 7k</p>
+    </div>
+    <div class="feature-item">
+        <img src="{%static 'images/img2.jpg' %}" alt="Shipping in 24 hours">
+        <p>Ship in 24 hours</p>
+    </div>
+    <div class="feature-item">
+        <img src="{%static 'images/img3.jpg' %}" alt="Warranty">
+        <p>1 yr Warranty</p>
+    </div> -->
+    <!-- <div class="feature-item">
+        <img src="{%static 'images/img4.jpg' %}" alt="Cash on Delivery">
+        <p>COD available up to 25k</p>
+    </div>
+    <div class="feature-item">
+        <img src="{%static 'images/img5.jpg' %}" alt="Discount">
+        <p>10% off on 1st purchase<br></p>
+    </div>
+</div> -->
+
+
+<!-- trending now -->
+<!-- <style> -->
+    <!-- /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+    } -->
+
+    <!-- /* Trending Now Section */
+    .trending-now {
+        padding: 20px;
+        text-align: center;
+    } -->
+
+    <!-- .trending-now h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    } -->
+
+    <!-- /* Product Grid */
+    .product-grid {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    } -->
+
+    <!-- /* Product Card */
+    .product {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: center;
+        width: 300px;
+        transition: transform 0.3s ease;
+    } -->
+
+    <!-- .product:hover {
+        transform: scale(1.05);
+    }
+
+    .product img {
+        width: 100%;
+        height: auto;
+    }
+
+    .product-name {
+        padding: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #555;
+    } -->
+<!-- </style>
+</head>
+<body>
+<section class="trending-now">
+    <h1>Trending Now</h1>
+    <div class="product-grid"> -->
+        <!-- Product 1 -->
+        <!-- <div class="product">
+            <img src="{%static 'images/trendingg1.webp' %}" alt="Philipp Plein - The Skull">
+            <p class="product-name">Philipp Plein - The Skull</p>
+        </div> -->
+        <!-- Product 2 -->
+        <!-- <div class="product">
+            <img src="{%static 'images/trendingg2.webp' %}" alt="Guess - Dress">
+            <p class="product-name">Guess - Dress</p>
+        </div> -->
+        <!-- Product 3 -->
+        <!-- <div class="product">
+            <img src="{%static 'images/trendingg3.webp' %}" alt="Versace - Medusa">
+            <p class="product-name">Versace - Medusa</p>
+        </div>
+    </div> -->
+<!-- </section> -->
+
+<!-- popular category -->
+
+<!-- <style> -->
+    <!-- /* General Styles */
+    /* body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+    } */
+
+    /* .popular-category-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px;
+    } */ -->
+
+    <!-- /* Left Section (Category List) */
+    /* .popular-category {
+        flex: 1;
+        padding-right: 20px;
+    }
+
+    .popular-category h3 {
+        font-size: 1.2rem;
+        font-weight: normal;
+        color: #888;
+        margin-bottom: 20px;
+    } */
+/* 
+    .popular-category ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    } -->
+
+    <!-- .popular-category ul li {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        line-height: 1.2;
+        color: #000;
+    }
+
+    /* Right Section (Image) */
+    .category-image {
+        flex: 1;
+        text-align: right;
+    }
+
+    .category-image img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+    }
+</style>
+</head> -->
+<!-- <body>
+<section class="popular-category-section"> -->
+    <!-- Left Section: Category List -->
+    <!-- <div class="popular-category">
+        <h3>Popular Category</h3>
+        <ul>
+            <li>Leather Strap</li>
+            <li>Automatic Watches</li>
+            <li>Chronograph Watches</li>
+            <li>Round Dial Watches</li>
+            <li>Gold Dial</li>
+        </ul>
+    </div> -->
+    <!-- Right Section: Image -->
+    <!-- <div class="category-image">
+        <img src="{%static 'images/popularimg1.webp' %}" alt="Watch Image">
+    </div>
+</section> -->
+
+
+
+
+<!-- international-->
+<!-- <style> -->
+    <!-- /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h1 {
+      color: #1bb1a5;
+      font-size: 2rem;
+      margin: 20px 0 10px;
+    }
+
+    h2 {
+      color: #000;
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    /* Grid Container */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Brand Card Styles */
+    .brand-card {
+      background-color: #ffffff;
+      border: 2px solid #1bb1a5;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .brand-card img {
+      max-width: 100%;
+      max-height: 60px;
+    }
+
+    .brand-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+    }
+  /* </style>
+</head>
+<body> -->
+  <!-- <h1>40+ INTERNATIONAL BRANDS</h1>
+  <h2>ONE TRUSTED DESTINATION</h2> */ -->
+  <!-- <div class="grid-container">
+    <div class="brand-card">
+      <img src="{%static 'images/in1.jpg' %}" alt="Aigner">
+    </div>
+    <div class="brand-card">
+      <img src="{%static 'images/in2.jpg' %}" alt="Amazfit">
+    </div>
+    <div class="brand-card">
+      <img src="{%static 'images/in3.jpg' %}" alt="Anne Klein">
+    </div> -->
+    <!-- <div class="brand-card">
+      <img src="{%static 'images/in4.jpg' %}" alt="Armani Exchange">
+    </div>
+    <div class="brand-card">
+      <img src="{%static 'images/in5.jpg' %}" alt="Balmain">
+    </div>
+    <div class="brand-card">
+      <img src="{%static 'images/in6.jpg' %}" alt="Calvin Klein">
+    </div>
+    <div class="brand-card"> -->
+      <!-- <img src="{%static 'images/in7.jpg' %}" alt="Casio">
+    </div>
+    <div class="brand-card">
+        <img src="{%static 'images/in8.jpg' %}" alt="Casio">
+      </div>
+    <div class="brand-card">
+        <img src="{%static 'images/in9.jpg' %}" alt="Casio">
+      </div>
+    <div class="brand-card">
+        <img src="{%static 'images/in11.jpg' %}" alt="Casio">
+      </div>
+    <div class="brand-card">
+        <img src="{%static 'images/in12.jpg' %}" alt="Casio">
+      </div>
+       <div class="brand-card"> 
+         <img src="{%static 'images/in13.jpg' %}" alt="Casio">
+      </div>
+    
+    <div class="brand-card">
+        <img src="{%static 'images/in14.jpg' %}" alt="Casio">
+      </div>
+    <div class="brand-card">
+        <img src="{%static 'images/in15.jpg '%}" alt="Casio"> -->
+      <!-- </div>
+    <div class="brand-card">
+        <img src="{%static 'images/in16.jpg' %}" alt="Casio">
+      </div> 
+     <div class="brand-card">
+        <img src="{%static 'images/in17.jpg' %}" alt="Casio">
+      </div>
+    <div class="brand-card">
+        <img src="" alt="Casio">
+    
+      </div>
+    <div class="brand-card">
+        <img src="" alt="Casio">
+      </div>
+    <div class="brand-card">
+        <img src="" alt="Casio">
+      </div>
+    <div class="brand-card"> -->
+        <!-- <img src="" alt="Casio">
+      </div>
+    <div class="brand-card">
+        <img src="" alt="Casio">
+      </div>
+    <div class="brand-card">
+        <img src="" alt="Casio">
+      </div>
+    <div class="brand-card">
+        <img src="" alt="Casio">
+      </div>
+    <div class="brand-card">
+        <img src="" alt="Casio">
+      </div> -->
+
+    <!-- Add more brand-card divs here with appropriate images -->
+  <!-- </div> */ -->
+
+  <div class="container mt-4"> 
+    
+    <div class="row">
+      {% for pro in Products %}
+      <!-- <div class="col-lg-5">
+       -->
+          
+      <div class="card" style="width:400px">
+            <img class="card-img-top" src="{{pro.img.url}}" alt="Card image" style="width:100%">
+            <div class="card-body">
+              <h4 class="card-title">{{pro.name}}</h4>
+              <p class="card-text">{{pro.des}}</p>
+              <a href="edit_product/{{pro.pk}}" class="btn btn-primary">Edit</a>
+              <a href="delete_product/{{pro.pk}}" class="btn btn-primary">Delete</a>
+            </div>
+        </div>
+          {% endfor %}
+   </div>
+  </div>
+
+</body>
+</html>

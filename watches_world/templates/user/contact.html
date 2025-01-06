@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" href="{%static 'user_home.css' %}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .menu ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .menu ul li a:hover {
+            color: #007BFF;
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .search {
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .icon {
+            font-size: 20px;
+            color: #000;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            background: red;
+            color: #fff;
+            font-size: 12px;
+            width: 16px;
+            height: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="{%static 'images/Luxury Modern Swiss Watch Clock Logo.png' %}" alt="Just Watches" />
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li><a href="about">about</a></li>
+                <li><a href="booking">booking</a></li>
+                <li><a href="cart">cart</a></li>
+                <li><a href="category">category</a></li>
+                <li><a href="contact">contact</a></li>
+                <li><a href="logout">logout</a></li>
+            </ul>
+        </nav>
+        <div class="actions">
+            <input type="text" placeholder="Search" class="search">
+            <a href="#profile" class="icon">👤</a>
+            <a href="#cart" class="icon">🛒<span class="cart-count">0</span></a>
+        </div>
+    </header>
+
+
+
+
+<style>
+    /* General Styles */
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        color: #333;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 800px;
+        margin: 50px auto;
+        text-align: center;
+    }
+
+    /* Heading */
+    .heading {
+        font-size: 2.5em;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    /* Paragraph Styles */
+    .description {
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 15px;
+    }
+
+    /* Button Styles */
+    .read-more-button {
+        display: inline-block;
+        background-color: #fff;
+        color: #000;
+        border: 1px solid #000;
+        padding: 8px 15px;
+        text-transform: uppercase;
+        font-size: 0.9em;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    .read-more-button:hover {
+        background-color: #000;
+        color: #fff;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <!-- Heading -->
+    <h1 class="heading">Premium Watches from Just Watches</h1>
+
+    <!-- Description Text -->
+    <p class="description">
+        Just Watches has become synonymous with prestige and luxury and has since grown to be the largest independent, Timex Group owned watch store in the country.
+    </p>
+    <p class="description">
+        Whether you shop online or at one of our stores, rest assured in knowing that we are Official Authorized Retailer for all the brands that we offer and every watch comes with the Manufacturer warranty supported with all documents, thereby making the watch 100% Authentic.
+    </p>
+
+    <!-- Read More Button -->
+    <a href="#" class="read-more-button">Read more</a>
+</div>
+
+
+
+<style>
+    /* General Styles */
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #333;
+        background-color: #f9f9f9;
+    }
+
+    /* Footer Section */
+    .footer {
+        background-color: #f9f9f9;
+        padding: 30px 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-top: 1px solid #ddd;
+    }
+
+    /* Left Section - Logo and Newsletter */
+    .footer-left {
+        max-width: 40%;
+    }
+
+    .footer-logo img {
+        width: 120px;
+        margin-bottom: 15px;
+    }
+
+    .footer-left h3 {
+        font-size: 1em;
+        font-weight: bold;
+        margin: 0 0 10px;
+        text-transform: uppercase;
+    }
+
+    .footer-left p {
+        font-size: 0.9em;
+        margin: 0 0 15px;
+        color: #555;
+        line-height: 1.5;
+    }
+
+    /* Newsletter Input */
+    .newsletter {
+        display: flex;
+        margin-top: 10px;
+    }
+
+    .newsletter input {
+        padding: 8px;
+        flex: 1;
+        border: 1px solid #ccc;
+        border-radius: 3px 0 0 3px;
+        font-size: 0.9em;
+    }
+
+    .newsletter button {
+        background-color: #000;
+        color: #fff;
+        border: none;
+        padding: 9px 15px;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        cursor: pointer;
+        border-radius: 0 3px 3px 0;
+    }
+
+    .newsletter button:hover {
+        background-color: #333;
+    }
+
+    /* Middle Section - Links */
+    .footer-middle {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-middle div {
+        margin-bottom: 15px;
+    }
+
+    .footer-middle div h4 {
+        font-size: 0.9em;
+        margin: 0;
+        cursor: pointer;
+        text-transform: capitalize;
+    }
+
+    .footer-middle div:hover {
+        text-decoration: underline;
+    }
+
+    /* Right Section - Social Icons */
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-right h4 {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .social-icons a {
+        text-decoration: none;
+    }
+
+    .social-icons img {
+        width: 24px;
+        height: 24px;
+        transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover img {
+        transform: scale(1.2); /* Zoom effect on hover */
+    }
+</style>
+</head>
+<body>
+<!-- Footer Section -->
+<footer class="footer">
+<!-- Left Section -->
+<div class="footer-left">
+    <div class="footer-logo">
+        <img src="https://via.placeholder.com/120x40" alt="Just Watches Logo">
+    </div>
+    <h3>Subscribe to Our Newsletter</h3>
+    <p>
+        Be the first to hear about new arrivals, by-invitation-only sales, and special events.
+    </p>
+    <div class="newsletter">
+        <input type="email" placeholder="Email">
+        <button>Subscribe</button>
+    </div>
+</div>
+
+<!-- Middle Section -->
+<div class="footer-middle">
+    <div>
+        <h4>Policies and Order</h4>
+    </div>
+    <div>
+        <h4>Help</h4>
+    </div>
+    <div>
+        <h4>Company</h4>
+    </div>
+</div>
+
+<!-- Right Section -->
+<div class="footer-right">
+    <h4>Stay connected</h4>
+    <div class="social-icons">
+        <!-- Replace these links with actual paths to images -->
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+            <img src="{%static 'images/instagram.png' %}" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+            <img src="{%static 'images/facebook-app-symbol.png' %}" alt="Facebook">
+        </a>
+        <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+            <img src="{%static 'images/twitter.png' %}" alt="Twitter">
+        </a>
+        <a href="https://www.youtube.com" target="_blank" aria-label="YouTube">
+            <img src="{%static 'images/youtube.png' %}" alt="YouTube">
+        </a>
+    </div>
+</div>
+</footer>
+</body>
+</html>
