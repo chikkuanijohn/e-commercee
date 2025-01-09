@@ -4,6 +4,8 @@ from django.contrib import messages
 from .models import *
 import os
 from django.contrib.auth.models import User
+from django.shortcuts import get_object_or_404
+
 
 # Create your views here.
 def watches_world_login(req):
@@ -68,28 +70,87 @@ def add_products(req) :
     else:
         return redirect(watches_world_login)    
     
-def edit_product(req,pid) :
-        if req.method=='POST':
-            pid=req.POST['pid']
-            name=req.POST['name']
-            des=req.POST['descrip']
-            pprice=req.POST['price']
-            offer_price=req.POST['offer_price']
-            cate=req.POST['category']
-            pstock=req.POST['stock']
-            file=req.FILES.get('img')
-            if file:
-                 Product.objects.filter(pk=pid).update(pid=pid,name=name,des=des,price=pprice,offer_price=offer_price,category=cate,stock=pstock,img=file)
-                 data=Product.objects.get(pk=pid)
-                 data.img=file
-                 data.save()
-            else:
-               Product.objects.filter(pk=pid).update(pid=pid,name=name,des=des,price=pprice,offer_price=offer_price,category=cate,stock=pstock,img=file)
-               return redirect(shop_home)
-        else:
-            data=Product.objects.get(pk=pid)
-            cate=Category.objects.all()
-            return render(req,'shop/edit_product.html',{'data':data, 'cate':cate})
+# def edit_product(req,pid) :
+#         if req.method=='POST':
+#             pid=req.POST['pid']
+#             name=req.POST['name']
+#             des=req.POST['descrip']
+#             pprice=req.POST['price']
+#             offer_price=req.POST['offer_price']
+#             cate=req.POST['category']
+#             pstock=req.POST['stock']
+#             file=req.FILES.get('img')
+#             if file:
+#                  Product.objects.filter(pk=pid).update(pid=pid,name=name,des=des,price=pprice,offer_price=offer_price,category=cate,stock=pstock,img=file)
+#                  data=Product.objects.get(pk=pid)
+#                  data.img=file
+#                  data.save()
+#             else:
+#                Product.objects.filter(pk=pid).update(pid=pid,name=name,des=des,price=pprice,offer_price=offer_price,category=cate,stock=pstock,img=file)
+#                return redirect(shop_home)
+#         else:
+#             data=Product.objects.get(pk=pid)
+#             cate=Category.objects.all()
+#             return render(req,'shop/edit_product.html',{'data':data, 'cate':cate})
+
+
+
+# def edit_product(req,pid):
+#     if req.method=='POST':
+#         pid=req.POST['pid']
+#         name=req.POST['name']
+#         des=req.POST['descrip']
+#         pprice=req.POST['price']
+#         offer_price=req.POST['offer_price']
+#         pstock=req.POST['stock']
+#         file=req.FILES.get('img')
+#         if file:
+#             Product.objects.filter(pk=pid).update(pid=pid,name=name,des=des,price=pprice,offer_price=offer_price,stock=pstock,img=file)
+#             data=Product.objects.get(pk=pid)
+#             data.img=file
+#             data.save()
+#         else:
+#             Product.objects.filter(pk=pid).update(pid=pid,name=name,dis=des,price=pprice,offer_price=offer_price,stock=pstock,img=file)
+#             return redirect(shop_home)
+#     else:
+#         data=Product.objects.get(pk=pid)
+#         cate=Category.objects.all()
+#         # return render(req,'shop/edit.html',{'data':data, 'cate':cate})
+#         return render(req,'shop/edit_product.html',{'data':data, 'cate':cate})
+
+    
+
+
+def edit_product(req, pid):
+    # Use get_object_or_404 to fetch the product
+    data = get_object_or_404(Product, pk=pid)
+
+    if req.method == 'POST':
+        name = req.POST['name']
+        des = req.POST['descrip']
+        pprice = req.POST['price']
+        offer_price = req.POST['offer_price']
+        pstock = req.POST['stock']
+        file = req.FILES.get('img')
+
+        # Update the product details
+        if file:
+            data.img = file
+
+        data.name = name
+        data.des = des
+        data.price = pprice
+        data.offer_price = offer_price
+        data.stock = pstock
+        data.save()
+
+        return redirect(shop_home)
+    else:
+        cate = Category.objects.all()
+        return render(req, 'shop/edit_product.html', {'data': data, 'cate': cate})
+
+    
+        
 
 def delete_product(req,pid):
     data=Product.objects.get(pk=pid)
@@ -151,7 +212,7 @@ def register(req):
         except:
             messages.warning(req,'invalid username or password')
             return redirect(register)   
-        return redirect(wathes_world_login) 
+        return redirect(watches_world_login) 
     else:
         return render(req,'user/register.html') 
     
@@ -228,5 +289,7 @@ def pro_buy(req,pid):
 
 
 
+def view_pro(request):
+    return render(request,'view_pro.html')
 
 
