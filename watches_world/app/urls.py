@@ -16,7 +16,7 @@ urlpatterns=[
     path('about/', views.about),
     path('contact/',views.contact),
     path('booking/',views.booking),
-    path('cart',views.cart),
+    path('cart/',views.cart),
     path('view_cart',views.view_cart),
     path('cart_pro_buy/<cid>',views.cart_pro_buy),
     path('pro_buy/<pid>',views.pro_buy),
